@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transfer list</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./index.js"></script>
+
+    <style>
+      .btn {
+        @apply bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold py-2 px-4 rounded shadow hover:from-blue-600 hover:to-purple-600 transition duration-300;
+      }
+    </style>
+
+  </head>
+  <body class="bg-gradient-to-r from-blue-50 to-purple-100 min-h-screen flex items-center justify-center">
+    <div class="bg-white shadow-xl rounded-xl p-8 max-w-5xl w-full flex gap-8">
+      <!-- Left Section -->
+      <div class="w-1/2">
+        <h2 class="text-xl font-semibold text-center text-blue-700 mb-4">Available Items</h2>
+        <div class="border rounded-lg p-4 h-64 overflow-y-auto space-y-3 bg-gray-50" id="left-section">
+          <label class="block bg-white shadow-sm p-2 rounded hover:bg-blue-50 cursor-pointer">
+            <input type="checkbox" value="Item 1" class="mr-2" />Item 1<br />
+          </label>
+          <label class="block bg-white shadow-sm p-2 rounded hover:bg-blue-50 cursor-pointer">
+            <input type="checkbox" value="Item 2" class="mr-2" />Item 2<br />
+          </label>
+          <label class="block bg-white shadow-sm p-2 rounded hover:bg-blue-50 cursor-pointer">
+            <input type="checkbox" value="Item 3" class="mr-2" />Item 3<br />
+          </label>
+          <label class="block bg-white shadow-sm p-2 rounded hover:bg-blue-50 cursor-pointer">
+            <input type="checkbox" value="Item 4" class="mr-2" />Item 4<br />
+          </label>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <div class="flex flex-col justify-center gap-4">
+        <button onclick="moveAll('right')" class="text-2xl bg-blue-600 text-white py-0.5 px-4 rounded-full shadow hover:bg-blue-700">≫</button>
+        <button onclick="moveSelected('right')" class="text-2xl bg-blue-500 text-white py-0.5 px-4 rounded-full shadow hover:bg-blue-600">›</button>
+        <button onclick="moveSelected('left')" class="text-2xl bg-green-500 text-white py-0.5 px-4 rounded-full shadow hover:bg-green-600">‹</button>
+        <button onclick="moveAll('left')" class="text-2xl bg-green-600 text-white py-0.5 px-4 rounded-full shadow hover:bg-green-700">≪</button>
+      </div>
+
+
+      <!-- Right Section -->
+      <div class="w-1/2">
+        <h2 class="text-xl font-semibold text-center text-green-700 mb-4">Selected Items</h2>
+        <div class="border rounded-lg p-4 h-64 overflow-y-auto space-y-3 bg-gray-50" id="right-section">
+          <!-- Moved items appear here -->
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
